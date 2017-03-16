@@ -1,5 +1,5 @@
 .page {
-  background-color: mintcream;
+  transition: background-color 1s;
 }
 
 body {
