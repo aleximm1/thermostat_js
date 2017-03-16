@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="page">
 <head>
   <meta charset="utf-8">
   <title>Thermostat</title>
@@ -13,26 +13,40 @@
 
     thermostat = new Thermostat
 
+    $(document).ready(function(){
+      $(".main_body").hide(0).delay(500).slideDown(3000)
+      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+      var Ucolour = thermostat.getUsageColour()
+      $('.page').css('background-color', Ucolour);
+    });
+
     $('#up').on('click', function(){
 
       thermostat.up();
       $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+      var colour = thermostat.getUsageColour()
+      $('.page').css('background-color', colour);
     });
 
     $('#down').on('click', function(){
       thermostat.down();
       $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+      var Ucolour = thermostat.getUsageColour()
+      $('.page').css('background-color', Ucolour);
     });
 
     $('#reset').on('click', function(){
       thermostat.reset();
       $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+      var Ucolour = thermostat.getUsageColour()
+      $('.page').css('background-color', Ucolour);
     });
 
     $('#ps').on('click', function(){
       thermostat.changeMode();
       $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
-      $('.ps').css('class', 'psbutton');
+      var colour = thermostat.getPSColour()
+      $('.psbutton').css('background-color', colour);
     });
 
   });
@@ -41,38 +55,41 @@
 
 </head>
 <body>
-  <div>
-    <button class="plusbutton" id="up"/>
-    <button class="minusbutton" id="down"/>
-  </div>
-  <div>
-    <button class="psmbutton" id="ps"/>
-  </div>
-  <div>
-    <button class="resetbutton" id="reset"/>
-  </div>
+  <div class="main_body">
+    <div>
+      <button class="plusbutton" id="up"/>
+    </div>
+    <div>
+      <button class="minusbutton" id="down"/>
+    </div>
+    <div>
+      <button class="psbutton" id="ps"/>
+    </div>
+    <div>
+      <button class="resetbutton" id="reset"/>
+    </div>
 
 
 
-  <body>
-    <!-- The .bar-container have a hardcoded height or has enough content to make it tall enough so the other parts of the bar can grow -->
-    <div class="bar-container" style="height: 500px;">
-      <div class="goal-bar">
-        <div class="bar-wrap">
-          <hr class="bar-line" />
-          <hr class="bar-line" />
-          <hr class="bar-line" />
-          <hr class="bar-line" />
-          <hr class="bar-line" />
-          <hr class="bar-line" />
-          <hr class="bar-line" />
-          <hr class="bar-line" />
-          <hr class="bar-line" />
-          <hr class="bar-line" />
+    <body>
+      <!-- The .bar-container have a hardcoded height or has enough content to make it tall enough so the other parts of the bar can grow -->
+      <div class="bar-container" style="height: 400px;">
+        <div class="goal-bar">
+          <div class="bar-wrap">
+            <hr class="bar-line" />
+            <hr class="bar-line" />
+            <hr class="bar-line" />
+            <hr class="bar-line" />
+            <hr class="bar-line" />
+            <hr class="bar-line" />
+            <hr class="bar-line" />
+            <hr class="bar-line" />
+            <hr class="bar-line" />
+            <hr class="bar-line" />
 
-          <div class="bar" style="transform: translateY(40%);">
-            <div class="bar-info">
-              <!-- <div class="bar-info-inner">content
+            <div class="bar" style="transform: translateY(40%);">
+              <div class="bar-info">
+                <!-- <div class="bar-info-inner">content
               </div> -->
             </div>
           </div>
@@ -80,21 +97,22 @@
         </div>
 
         <div class="bar-labels">
-          <span class="bar-label">50</span>
-          <span class="bar-label">45</span>
-          <span class="bar-label">40</span>
-          <span class="bar-label">35</span>
+          <span class="bar-label">33</span>
           <span class="bar-label">30</span>
-          <span class="bar-label">25</span>
+          <span class="bar-label">27</span>
+          <span class="bar-label">23</span>
           <span class="bar-label">20</span>
-          <span class="bar-label">15</span>
+          <span class="bar-label">17</span>
+          <span class="bar-label">13</span>
           <span class="bar-label">10</span>
-          <span class="bar-label">5</span>
+          <span class="bar-label">7</span>
+          <span class="bar-label">3</span>
           <span class="bar-label">0</span>
         </div>
       </div> <!-- /.goal-bar -->
     </div>
-  </body>
+  </div>
+</body>
 </body>
 
 </html>
