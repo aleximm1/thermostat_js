@@ -14,8 +14,8 @@ Thermostat.prototype.mode = function () {
 
 Thermostat.prototype.changeMode = function () {
    this.currentMode = !this.currentMode;
-   if(this.getTemp() > 25 ) {
-     this.currentTemp = 25
+   if(this.getTemp() > this.PSMAXIMUMTEMP ) {
+     this.currentTemp = this.PSMAXIMUMTEMP
    }
 };
 
