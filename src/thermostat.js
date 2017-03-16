@@ -60,3 +60,10 @@ Thermostat.prototype.checkUsage = function () {
   }
   return usage;
 };
+
+Thermostat.prototype.getPercentage = function () {
+  var percent;
+  percent = this.getTemp() * 3
+  percent = 100 - percent
+  return percent
+};

@@ -14,20 +14,25 @@
     thermostat = new Thermostat
 
     $('#up').on('click', function(){
-      thermostat.up()
-      $('#div.class="bar"').html('style', 'transform: translateY(75%)');
+
+      thermostat.up();
+      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
     });
 
     $('#down').on('click', function(){
       thermostat.down();
+      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
     });
 
     $('#reset').on('click', function(){
       thermostat.reset();
+      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
     });
 
-    $('#psmbutton').on('click', function(){
+    $('#ps').on('click', function(){
       thermostat.changeMode();
+      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+      $('.ps').css('class', 'psbutton');
     });
 
   });
@@ -65,7 +70,7 @@
           <hr class="bar-line" />
           <hr class="bar-line" />
 
-          <div class="bar" style="transform: translateY(55%);">
+          <div class="bar" style="transform: translateY(40%);">
             <div class="bar-info">
               <!-- <div class="bar-info-inner">content
               </div> -->
