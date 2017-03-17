@@ -7,49 +7,48 @@
   <script src="../src/thermostat.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
   <script src="jquery.js"></script>
-
-  <script>
-  $(document).ready(function(){
-
-    thermostat = new Thermostat
-
-    $(document).ready(function(){
-      $(".main_body").hide(0).delay(500).fadeIn(3000)
-      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
-      var Ucolour = thermostat.getUsageColour()
-      $('.page').css('background-color', Ucolour);
-    });
-
-    $('#up').on('click', function(){
-
-      thermostat.up();
-      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
-      var Ucolour = thermostat.getUsageColour()
-      $('.page').css('background-color', Ucolour);
-    });
-
-    $('#down').on('click', function(){
-      thermostat.down();
-      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
-      var Ucolour = thermostat.getUsageColour()
-      $('.page').css('background-color', Ucolour);
-    });
-
-    $('#reset').on('click', function(){
-      thermostat.reset();
-      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
-      var Ucolour = thermostat.getUsageColour()
-      $('.page').css('background-color', Ucolour);
-    });
-
-    $('#ps').on('click', function(){
-      thermostat.changeMode();
-      $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
-      var colour = thermostat.getPSColour()
-      $('.psbutton').css('background-color', colour);
-    });
-
-  });
+  <script src="../public/buttoninteractions.js">
+  // $(document).ready(function(){
+  //
+  //   thermostat = new Thermostat
+  //
+  //   $(document).ready(function(){
+  //     $(".main_body").hide(0).delay(500).fadeIn(3000)
+  //     $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+  //     var Ucolour = thermostat.getUsageColour()
+  //     $('.page').css('background-color', Ucolour);
+  //   });
+  //
+  //   $('#up').on('click', function(){
+  //
+  //     thermostat.up();
+  //     $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+  //     var Ucolour = thermostat.getUsageColour()
+  //     $('.page').css('background-color', Ucolour);
+  //   });
+  //
+  //   $('#down').on('click', function(){
+  //     thermostat.down();
+  //     $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+  //     var Ucolour = thermostat.getUsageColour()
+  //     $('.page').css('background-color', Ucolour);
+  //   });
+  //
+  //   $('#reset').on('click', function(){
+  //     thermostat.reset();
+  //     $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+  //     var Ucolour = thermostat.getUsageColour()
+  //     $('.page').css('background-color', Ucolour);
+  //   });
+  //
+  //   $('#ps').on('click', function(){
+  //     thermostat.changeMode();
+  //     $('.bar').css('transform', 'translateY(' + thermostat.getPercentage() + '%)');
+  //     var colour = thermostat.getPSColour()
+  //     $('.psbutton').css('background-color', colour);
+  //   });
+  //
+  // });
 
   </script>
 
@@ -68,7 +67,6 @@
     <div>
       <button class="resetbutton" id="reset"/>
     </div>
-
 
       <!-- The .bar-container have a hardcoded height or has enough content to make it tall enough so the other parts of the bar can grow -->
       <div class="bar-container" style="height: 400px;">

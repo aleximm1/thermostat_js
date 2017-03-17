@@ -78,10 +78,10 @@ Thermostat.prototype.getPSColour = function() {
 
 Thermostat.prototype.getUsageColour = function() {
   if (this.checkUsage() === "Low-usage") {
-    return 'greenyellow'
+    return 'green'
   } else if (this.checkUsage() === "Medium-usage") {
     return 'black'
   } else if (this.checkUsage() === "High-usage") {
-    return 'red'
+    return 'darkred'
   }
 }
